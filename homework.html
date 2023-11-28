@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Web-Homework</title>
+      <style>
+		body, html {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			font-family: "Segoe UI", Arial, sans-serif;
+		}
+		
+		header {
+			height: 15%;
+			background: linear-gradient(to right, #FF0000, #FF4500);
+		}
+		
+		footer {
+			height: 10%;
+			background: linear-gradient(to right, #FF0000, #FF4500);
+		}
+		
+		.container {
+			height: 75%;
+			display: flex;
+		}
+		
+		menu {
+			width: 25%;
+			background-color: lightgray;
+		}
+		
+		.content {
+			width: 75%;
+			background-color: white;
+		}
+		
+		menu li.active {
+			color: red;
+		}
+      </style>
+      <script>
+         window.onload = function() {
+           var menuItems = document.querySelectorAll('menu li');
+           var content = document.querySelector('.content');
+           
+             menuItems[0].addEventListener('click', function() {
+               menuItems.forEach(function(item) {
+                 item.classList.remove('active');
+               });
+               
+               this.classList.add('active');
+               content.textContent = "Ивльев Даниил ИСП-33.";
+             });
+         
+         menuItems[1].addEventListener('click', function() {
+               menuItems.forEach(function(item) {
+                 item.classList.remove('active');
+               });
+               
+               this.classList.add('active');
+               content.textContent = "Данная страница нужна в качестве тренировки в написании HTML страниц с использованием CSS и JS.";
+             });
+         
+         menuItems[2].addEventListener('click', function() {
+               menuItems.forEach(function(item) {
+                 item.classList.remove('active');
+               });
+               
+               this.classList.add('active');
+               content.innerHTML = `Автор: Ивльев Даниил ИСП-33 <br>Дата: 27.11.2023`;
+             });
+         };
+      </script>
+   </head>
+   <body>
+      <header></header>
+      <div class="container">
+         <menu>
+            <ul>
+               <li>ФИО</li>
+               <li>Зачем оно надо?</li>
+               <li>О ДЗ</li>
+            </ul>
+         </menu>
+         <div class="content"></div>
+      </div>
+      <footer></footer>
+   </body>
+</html>
